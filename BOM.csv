@@ -1,11 +1,12 @@
 Quantity, Part,             notes,                  Link
 2,  nine!nano v2.0,         ,                       https://mkultra.click/nice-nano-v2/
 2,  301230 Battery,         ,                       https://mkultra.click/301230-lipo-battery-with-jst-connector/
-4,  mill-max sockets,       tall,                   https://mkultra.click/mill-max-micro-controller-sockets-and-pins/
+2,  mill-max sockets,       26 pins per board!,     https://amzn.to/33hyNDE
+26, mill-max socket pins,   you can use 0.6mm wire,
 2,  trrs connector,         optional,               https://mkultra.click/pj-320a-3-5mm-trrs-jack/
 1,  trrs cable,             optional,               https://amzn.to/3oaKMtP
 10, m2x4 screws,            20 if using pcb base,   https://amzn.to/3GeN5SZ
-1,  usb c cable,            ,
+1,  usb c cable,            2 to charge,
 2,  slide switches,         optional,               https://amzn.to/34la3KJ
 2,  button,                 ,                       https://amzn.to/3HeN3Mg
 36, key caps,               ,                       https://mkultra.click/mbk-factory-colors/

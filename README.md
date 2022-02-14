@@ -5,6 +5,11 @@ left | right
 -|-
 ![left](images/board-front.png) | ![right](images/board-back.png)
 
+WARNING, for some reason the center thumb diode doesn't get wired automatically. 
+You will want to open the generated files in Kicad and add the missing routes and repackage before sending off for fabrication
+(or just hand wire them in if you didn't catch it until you spent hours trying to track down all your bad solder joints 
+only to find that one diode simply was not routed).
+
 A 5x3 split keyboard with 3 thumbs. There is nothing unique about the keyboard layout. It's inspired by Corne and Kyria, and
 has the exact number of keys needed for the [Miryoku](https://github.com/manna-harbour/miryoku) layout.
 
@@ -37,5 +42,8 @@ If you would like to modify this:
   * check the `output` folder for KiCad PCBs and Gerbers
 * buy the parts in the BOM.csv
 * assemble
+* flash both halves with ZMK (https://github.com/soundmonster/samoklava-zmk-config, or https://github.com/manna-harbour/miryoku/issues/50)
+* check all you keys
+* start typing
 
 See the [workflow](.github/workflows/build.yml) or the [Makefile](Makefile) for more details.
