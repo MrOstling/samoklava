@@ -306,15 +306,31 @@ outlines:
         type: outline
         name: _base_outline
         operation: subtract
+    _wire_cut_poly:
+      - type: polygon
+        points:
+          - ref: matrix_inner_top
+            shift: [ 32, -31 + controller_shift_y ]
+          - ref: matrix_inner_top
+            shift: [ 32+10, -31 + controller_shift_y ]
+          - ref: matrix_inner_top
+            shift: [ 32+10, -31 + controller_shift_y + 10 ]
+          - ref: matrix_inner_top
+            shift: [ 32, -31 + controller_shift_y + 10 ]
+    _wire_cut:
+      main:
+        type: outline
+        name: _wire_cut_poly
+        fillet: 2.45
     _side_cut_poly:
       - type: polygon
         points:
           - ref: matrix_inner_top
             shift: [ 32, -48 + controller_shift_y ]
           - ref: matrix_inner_top
-            shift: [ 32+5, -48 + controller_shift_y ]
+            shift: [ 32+7, -48 + controller_shift_y ]
           - ref: matrix_inner_top
-            shift: [ 32+5, -48 + controller_shift_y + 19]
+            shift: [ 32+7, -48 + controller_shift_y + 19]
           - ref: matrix_inner_top
             shift: [ 32, -48 + controller_shift_y + 19]
     _side_cut:
@@ -476,12 +492,18 @@ cases:
     - type: outline
       name: _side_outline
       extrude: case_depth
+  _wire_cut_void:
+    - type: outline
+      name: _wire_cut
+      extrude: 2+case_wall_thickness
+      rotate: [ 0,90,0 ]
+      shift: [ -case_wall_thickness-3.5,0,case_bottom_thickness + 5]
   _side_cut_void:
     - type: outline
       name: _side_cut
       extrude: 2+case_wall_thickness
       rotate: [ 0,90,0 ]
-      shift: [ -case_wall_thickness-1,0,case_bottom_thickness + case_bottom_offset + board_thickness ]
+      shift: [ -case_wall_thickness-2,0,case_bottom_thickness + case_bottom_offset + board_thickness + 2.5 ]
   _top_cut_void:
     - type: outline
       name: _top_cut
@@ -506,6 +528,9 @@ cases:
     - type: case
       name: _sides
       operation: add
+    - type: case
+      name: _wire_cut_void
+      operation: subtract
     - type: case
       name: _side_cut_void
       operation: subtract
